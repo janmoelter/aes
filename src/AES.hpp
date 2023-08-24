@@ -17,19 +17,19 @@
 
 #include <stdexcept>
 
-enum class AES_standard { AES128, AES192, AES256 };
-
-class AES_module
+class AES
 {
 
 public:
-	AES_module(AES_standard);
-	~AES_module();
+	enum struct Variant : std::uint8_t { AES_128, AES_192, AES_256 };
+
+	AES(AES::Variant);
+	~AES();
 
 private:
 	void initialize(void);
 
-	AES_standard _standard;
+	Variant _variant;
 
 	uint8_t Nk;
 	uint8_t Nb;
@@ -103,6 +103,6 @@ public:
 
 	void set_key(const std::vector<byte>&);
 
-	void test_standard(void);
+	void compute_example_vectors(void);
 
 };
