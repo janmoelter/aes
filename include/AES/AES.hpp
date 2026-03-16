@@ -13,9 +13,9 @@
 
 #include <bitset>
 
-#include "byte.hpp"
-
 #include <stdexcept>
+
+#include <AES/byte.hpp>
 
 class AES
 {

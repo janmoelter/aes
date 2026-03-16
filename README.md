@@ -11,11 +11,12 @@ Note: This implementation comes with no warranty and should not be used in missi
 
 ## Build
 
+```bash
+mkdir build
+cd build
+cmake .. -DEXAMPLES=ON
+cmake --build .
 ```
-make
-```
-
-The compiled executable can then be found the directory `bin/`.
 
 ## References
 

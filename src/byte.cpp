@@ -1,4 +1,4 @@
-#include "byte.hpp"
+#include "AES/byte.hpp"
 
 std::vector<uint8_t> byte::_exp_table = std::vector<uint8_t>(0x00);
 std::vector<uint8_t> byte::_log_table = std::vector<uint8_t>(0x00);
