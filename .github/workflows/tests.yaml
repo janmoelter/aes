@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v7
+      
+      - name: Configure
+        run: cmake -S . -B build -DTESTS=ON
+      
+      - name: Build
+        run: cmake --build build
+      
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
