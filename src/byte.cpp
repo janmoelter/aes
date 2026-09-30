@@ -62,7 +62,7 @@ void byte::xtime(void)
 	this->_byte = xtime(this->_byte);
 }
 
-byte byte::operator+(const byte &X)
+byte byte::operator+(const byte &X) const
 {
 	return byte(this->_byte ^ X._byte);
 }
@@ -73,7 +73,7 @@ byte & byte::operator+=(const byte &X)
 	return *this;
 }
 
-byte byte::operator*(const byte &X)
+byte byte::operator*(const byte &X) const
 {
 	// byte _X = X;
 	// byte _Y = byte();
@@ -95,17 +95,17 @@ byte & byte::operator*=(const byte &X)
 	return *this;
 }
 
-bool byte::operator==(const byte &X)
+bool byte::operator==(const byte &X) const
 {
 	return (this->_byte == X._byte);
 }
 
-bool byte::operator!=(const byte &X)
+bool byte::operator!=(const byte &X) const
 {
 	return !(*this == X);
 }
 
-byte byte::inverse(void)
+byte byte::inverse(void) const
 {
 	// return this->_byte != 0 ? byte( _exp_table[ ( 0xff ^ _log_table[this->_byte] ) % 0xff ] ) : byte(0x00); 
 	return this->_byte != 0 ? byte(_exp_table.at(0xff ^ _log_table.at(this->_byte))) : byte(0x00);

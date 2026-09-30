@@ -31,16 +31,16 @@ private:
 	static std::vector<uint8_t> _log_table;
 
 public:
-	bool operator==(const byte &);
-	bool operator!=(const byte &);
+	bool operator==(const byte &) const;
+	bool operator!=(const byte &) const;
 
-	byte operator+(const byte &);
+	byte operator+(const byte &) const;
 	byte & operator+=(const byte &);
 
-	byte operator*(const byte &);
+	byte operator*(const byte &) const;
 	byte & operator*=(const byte &);
 
-	byte inverse(void);
+	byte inverse(void) const;
 
 	uint8_t to_uint8_t(void) const;
 	std::bitset<8> to_bitset(void) const;

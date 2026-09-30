@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.18)
+
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
 	message(FATAL_ERROR "Source and build directories cannot be the same.")
 endif()
+
 project(aes VERSION 1.0 LANGUAGES CXX)
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -38,4 +40,11 @@ option(EXAMPLES "Build examples" OFF)
 
 if(EXAMPLES)
 	add_subdirectory(examples)
+endif()
+
+option(TESTS "Build tests" OFF)
+
+if(TESTS)
+	enable_testing()
+	add_subdirectory(tests)
 endif()
