@@ -38,7 +38,7 @@ mkdir build && cd build
 cmake .. -DEXAMPLES=ON
 cmake --build .
 
-./examples/examples
+./examples/example_vectors
 ```
 
 ## References
